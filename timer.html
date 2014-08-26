@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+        <link rel='stylesheet' href='timer.css' />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="tock.js"></script>
+        <script type="text/javascript" src='timer.js'></script>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- iPhone ICON -->
+        <link rel="apple-touch-icon" href="./img/touch-icon-iphone.png">
+        <!-- iPad ICON-->
+        <link rel="apple-touch-icon" sizes="76x76" href="./img/touch-icon-ipad.png">
+        <!-- iPhone (Retina) ICON-->
+        <link rel="apple-touch-icon" sizes="120x120" href="./img/touch-icon-iphone-retina.png">
+        <!-- iPad (Retina) ICON-->
+        <link rel="apple-touch-icon" sizes="152x152" href="./img/touch-icon-ipad-retina.png">
+
+    	<!-- iPhone standard resolution 320x460  (landscape not needed because all web apps start portrait on iPhone) -->
+    	<link  rel="apple-touch-startup-image" href="splash-320x460.jpg" media="(device-width: 320px)" />
+    	<!-- iPhone 4/4s high resolution (retina) 640x920 pixels (landscape not needed because all web apps start portrait on iPhone) -->
+    	<link rel="apple-touch-startup-image" href="splash-640x920.jpg" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" />
+    	<!-- iPhone 5 high resolution (retina) 640x1096 pixels (landscape not needed because all web apps start portrait on iPhone) -->
+    	<link rel="apple-touch-startup-image" href="splash-640x1096.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+
+    	<!-- iPad Portrait 768x1004 -->
+    	<link rel="apple-touch-startup-image" href="splash-768x1004.jpg" media="(device-width: 768px) and (orientation: portrait)" />
+    	<!-- iPad Landscape 748x1024 (yes, a portrait image but with content rotated 90 degrees - allows 20px for status bar) -->
+    	<link rel="apple-touch-startup-image" href="splash-748x1024.jpg" media="(device-width: 768px) and (orientation: landscape)" />
+    	<!-- iPad retina Portrait 1536x2008 -->
+    	<link rel="apple-touch-startup-image" href="splash-1536x2008.jpg" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" />
+    	<!-- iPad retina Landscape 1496x2048 (yes, a portrait image but with content rotated 90 degrees - allows 40px for status bar) -->
+    	<link rel="apple-touch-startup-image" href="splash-1496x2048.jpg" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" />
+        <title>Damage Report Timer</title>
+    </head>
+    
+    <body>
+        <div id="loaderbox">
+            <div id="loaderMsg">
+                <div class="loadertext" id="loaderWelcome">Welcome to the Damage Report Timer. This is intended for use on an iPhone as a companion to the <a href="http://boardgamegeek.com/boardgame/128137/damage-report">Damage Report</a> board game. It is recommended loading in portrait mode and switching to landscape once timer is displayed. This uses sound so please turn your volume UP.</div> 
+                <div class="loadertext" id="loaderPop">loading...<br /><img src="./img/loading1.gif" /></div>
+                <div class = "loadertext" id="loaderready">                    
+                    <div class="buttons dkgreenbtn" id="loaderbtn">DON'T PANIC</div>
+                </div>
+            </div>
+        </div>
+        <div class="borders timerbox" id="timer">
+            <div class="tmrlogo" id="drheader"><img class="drlogo" src="./img/drlogo.png"></div>
+            <div class="tmrgrp" id="tmrdisp">0:00.00</div>
+            <div class="tmrgrp redtext" id="gameoverdisp">GAME OVER!</div>
+<!--        <div class="tmrcounter" id="tmrcount">3:00.00</div>  --> 
+            <div class="tmrcounter" id="tmrlap"></div>
+            <div class="tmrbtn">
+                <div class="buttons greenbtn" id="tmrstart">Start</div>
+                <div class="buttons redbtn" id="tmrpause">Pause</div>
+                <div class="buttons greenbtn" id="tmrresume">Resume</div>
+                <div class="buttons orangebtn" id="tmrreset">Reset</div>
+                <div class="buttons bluebtn" id="setbtn">Settings</div>
+            </div>
+            <div class="vsepbox"></div> 
+            <audio preload="auto" id="redAlert">
+                <source src="./audio/red_alert.mp3" type="audio/mpeg">
+                <source src="./audio/red_alert.ogg" type="audio/ogg">
+            </audio>
+            <audio preload="auto" id="gameOver">
+                <source src="./audio/bomb-06.mp3" type="audio/mpeg">
+                <source src="./audio/bomb-06.ogg" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="borders timerbox" id="settings"><div class="boxTitle">Settings</div>
+            <div class="credBox" id="settingsBox">
+                <div class="setCol" id="settimer">
+                    <h3>Timer</h3>
+                    <div class="settingItem"><form>Interval: <input type="text" name="setTime" size="4" placeholder="3:00" value="3:00" pattern="([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]" title="Must be time in M:SS" id="tmrInterSet"></form></div>
+                    <div class="settingItem"><form>Damage Reports (including Game Over): <input type="text" name="setDRCard" size="2" placeholder="15" value="15" pattern="([0-9][0-9]|[0-9])" title="Must be a number" id="tmrDRDeck"></form></div>
+                    <div class="settingItem"><form>Event Cards added: <input type="text" name="setEvCard" size="2" placeholder="0" value="0" pattern="([0-9][0-9]|[0-9])" title="Must be a number" id="tmrDREvent"></form></div>
+                    <div class="settingItem">&nbsp;</div>
+                    <div class="settingItem" id="settingTotGameTime">Total Game Time: <span id="setTotTime"></span></div>
+                </div>
+            </div>
+            <div class="tmrbtn">
+                <div class="buttons greybtn ltbtn" id="credbtn">Credits</div>
+                <div class="buttons redbtn rtbtn" id="mainbtn">Close</div>
+            </div>
+        </div>
+        <div class="borders timerbox" id="credits"><div class="boxTitle">Credits</div>
+            <div class="credBox" id="creditText">
+                <p>Created by Ben "Cuzza" Curran for use with <a href="http://boardgamegeek.com/boardgame/128137/damage-report">Damage Report</a> by <a href="http://www.bfrgames.com/">Break From Reality Games</a>.</p>
+                <p>Thanks to <a href="https://twitter.com/cwoodley">Cale Woodley</a> for answering my dumbassed questions about web design.</p>
+                <p>Thanks to <a href="http://www.codecademy.com/learn">Codeacademy</a> for teaching me HTML5, CSS, JavaScript and JQuery in 2 weeks to make this.</p>
+                <p>Timer powered by <a href="https://github.com/mrchimp/tock">Tock.js</a> by MrChimp.</p>
+                <p>Development space provided by <a href="https://koding.com/">Koding</a>.</p>
+                <p>Red Alert sound effect by <a href="http://www.medievalfuture.com/precursors/main.php">The Precursors</a>.</p>
+            </div>
+            <div class="tmrbtn">
+                <div class="buttons bluebtn ltbtn" id="crsetbtn">Settings</div>
+                <div class="buttons redbtn rtbtn" id="crmainbtn">Close</div>
+            </div>
+        </div>
+    </body>
+
+</html>
+

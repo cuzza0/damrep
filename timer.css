@@ -1,0 +1,393 @@
+/* * {
+    border: 1px dashed white;
+} */
+
+body {
+    background-image: url('./img/nebuladamagereport.jpg');
+    background-size:100%;
+    background-color: #000000;
+}
+
+h1 {
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+}
+
+h3 {
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1em;
+}
+
+p {
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+    font-size: 1.4em;
+}
+
+a {
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: #24AFD8;
+    text-decoration: none;
+}
+/* Loading screen styles */
+#loaderbox {
+    display:table; 
+    position: absolute; 
+    text-align: center;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 10000; 
+    background: #000000;
+}
+
+#loaderMsg {
+    display:table-cell; 
+    vertical-align:middle; 
+    text-align: center; 
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.loadertext {
+    display:block; 
+    text-align: center; 
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#loaderWelcome {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 3em;
+}
+
+#loaderPop {
+    height: 48px;
+    font-size: 3em;
+}
+
+#loaderbtn {
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    display: block;
+    height: 70px;
+    width: 360px;
+    margin: 0 auto;
+    font-size: 3em;
+}
+
+/* Layout of boxes for content */
+.vsepbox {
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Indivdual box settings */
+.timerbox {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Formatting for layout boxes */
+.borders {
+    border: 2px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.comingsoon {
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+/*    font-size: 1.5em; */
+    font-weight: bold;
+    color: white;
+}
+
+/* Formatting for elements */
+
+/* Common elements */
+.buttons {
+    height: 70px;
+/*    width: 48%; */
+    border: 1px solid #333333;
+    text-align: center;
+    display:inline-block;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding-top: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Timer box elements */
+.tmrgrp {
+/*    margin-top: 16px; */
+    width: 95%;
+    height: 220px;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-size: 11em; 
+    font-weight: bold;
+    color: white;
+	margin:0px auto;
+    text-align:center; 
+/*    border: 1px solid black; */
+}
+
+.tmrlogo {
+    width: 90%;
+    height: 180px;
+	margin:0px auto;
+    text-align:center; 
+}
+
+#gameoverdisp {
+    font-size: 7em;
+    height: 200px;
+    padding-top: 20px;
+}
+
+.drlogobox {
+    width: 80%;
+	margin:0px auto;
+    text-align:center; 
+}
+.drlogo {
+    height: auto;
+    width: 80%;
+}
+
+.tmrbtn {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    font-size: 3em; 
+/*    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    border: 1px solid white; */  
+}
+
+.ltbtn {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.rtbtn {
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+#tmrstart {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+#setbtn {
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+#tmrreset {
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+#tmrpause {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+#tmrresume {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.tmrcounter {
+/*    border: 1px solid #ddd; */
+    width: 95%;
+    height: 50px;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 2.1em;
+    display: block;
+    margin: 0 auto;
+}
+
+.boxTitle {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 3em;
+    display: block;
+    margin: 0 auto;
+}
+
+.setCol {
+    height: 300px;
+    width: 100%;
+    display: inline-block;
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+    font-size: 2em;
+}
+
+.credBox {
+    height: 400px;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.settingItem {
+    height: 50px;
+    width: 100%;
+}
+
+#settingTotGameTime {
+    text-align: center;
+}
+
+input[type="text"] {
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    font-size: 0.9em;
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+}
+
+/* Systems box elements */
+.scorebox {
+    height:100%;
+    width:19.1%;
+    border: 2px solid #333333;
+    border-radius: 20px;
+    position:relative;
+    display: inline-block; 
+/*	display: table; */
+
+}
+.updownbutton {
+    height:50%;
+    width:100%;
+    background-color: transparent;
+    position:absolute;
+/*    border: 1px solid white; */
+}
+.upbtn {
+    top: 0;
+}
+.downbtn {
+    top: 50%;
+}
+.statusbox {
+	display: table; 
+	height: 500px;
+    
+}
+
+.statusout {
+/*    border: 1px solid white; */
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-size: 4em; 
+    font-weight: bold;
+    color: white;
+    text-align:center;
+/*	display: table-cell; 
+	vertical-align: middle;
+	z-index: 1; */
+}
+
+.redtext {
+    color: red;
+}
+
+/* Color button gradients common between boxes */
+.greenbtn {
+    background-color: #032400;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#032400), to(#8BCB3F));
+    background-image: -webkit-linear-gradient(top, #032400, #8BCB3F); 
+    background-image:    -moz-linear-gradient(top, #032400, #8BCB3F);
+    background-image:     -ms-linear-gradient(top, #032400, #8BCB3F);
+    background-image:      -o-linear-gradient(top, #032400, #8BCB3F);
+}
+
+.redbtn {
+    background-color: #240300;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#240300), to(#CB0300));
+    background-image: -webkit-linear-gradient(top, #240300, #CB0300); 
+    background-image:    -moz-linear-gradient(top, #240300, #CC0300);
+    background-image:     -ms-linear-gradient(top, #240300, #CC0300);
+    background-image:      -o-linear-gradient(top, #240300, #CC0300);
+}
+
+.orangebtn {
+    background-color: #4D1300;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#4D1300), to(#E19035));
+    background-image: -webkit-linear-gradient(top, #4D1300, #E19035); 
+    background-image:    -moz-linear-gradient(top, #4D1300, #E19035);
+    background-image:     -ms-linear-gradient(top, #4D1300, #E19035);
+    background-image:      -o-linear-gradient(top, #4D1300, #E19035);
+}
+
+.purplebtn {
+    background-color: #230032;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#230032), to(#9376A6));
+    background-image: -webkit-linear-gradient(top, #230032, #9376A6); 
+    background-image:    -moz-linear-gradient(top, #230032, #9376A6);
+    background-image:     -ms-linear-gradient(top, #230032, #9376A6);
+    background-image:      -o-linear-gradient(top, #230032, #9376A6);
+}
+
+.dkgreenbtn {
+    background-color: #001400;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#001400), to(#2B9B0F));
+    background-image: -webkit-linear-gradient(top, #001400, #2B9B0F); 
+    background-image:    -moz-linear-gradient(top, #001400, #2B9B0F);
+    background-image:     -ms-linear-gradient(top, #001400, #2B9B0F);
+    background-image:      -o-linear-gradient(top, #001400, #2B9B0F);
+}
+
+.greybtn {
+    background-color: #262626;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#262626), to(#797A7C));
+    background-image: -webkit-linear-gradient(top, #262626, #797A7C); 
+    background-image:    -moz-linear-gradient(top, #262626, #797A7C);
+    background-image:     -ms-linear-gradient(top, #262626, #797A7C);
+    background-image:      -o-linear-gradient(top, #262626, #797A7C);
+}
+
+.bluebtn {
+    background-color: #13235E;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#13235E), to(#24AFD8));
+    background-image: -webkit-linear-gradient(top, #13235E, #24AFD8); 
+    background-image:    -moz-linear-gradient(top, #13235E, #24AFD8);
+    background-image:     -ms-linear-gradient(top, #13235E, #24AFD8);
+    background-image:      -o-linear-gradient(top, #13235E, #24AFD8);
+}
+

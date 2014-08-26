@@ -1,0 +1,648 @@
+/* * {
+    border: 1px dashed white;
+} */
+
+body {
+    background-image: url('./img/nebuladamagereport.jpg');
+    background-size:100%;
+    background-color: #000000;
+}
+
+h1 {
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+}
+
+h3 {
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 1.1em;
+}
+
+p {
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+    font-size: 0.7em;
+}
+
+a {
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: #24AFD8;
+    text-decoration: none;
+}
+/* Loading screen styles */
+#loaderbox {
+    display:table; 
+    position: absolute; 
+    text-align: center;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 10000; 
+    background: #000000;
+}
+
+#loaderMsg {
+    display:table-cell; 
+    vertical-align:middle; 
+    text-align: center; 
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.loadertext {
+    display:block; 
+    text-align: center; 
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.loaderWelcome {
+    margin: 0 auto;
+}
+
+.loaderPop {
+    height: 48px;
+}
+
+.loaderBtn {
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+#loaderWelcomePad {
+    width: 500px;
+    font-size: 1.2em;
+}
+
+#loaderbtnPad {
+    height: 35px;
+    width: 180px;
+}
+
+#loaderWelcomePhone {
+    width: 90%;
+    font-size: 3em;
+}
+
+#loaderPopPhone {
+    font-size: 3em;
+}
+
+#loaderbtnPhone {
+    height: 70px;
+    width: 360px;
+    font-size: 3em;
+}
+
+/* Layout of boxes for content */
+.toprowbox {
+    width: 100%;
+    height: 47.5%;
+    margin: 0;
+    padding: 0;
+}
+
+.botrowbox {
+    width: 100%;
+    height: 48.5%;
+    margin: 0;
+    padding: 0;
+}
+
+.vsepbox {
+    height: 3%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Common settings between boxes on each row */
+ .toprow {
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+} 
+
+.bottomrow {
+    height: 90%; 
+} 
+
+/* Indivdual box settings */
+#breachBox {
+    width: 25%;
+    float: left;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+/*    font-size: 2em; */
+    font-weight: bold;
+    color: white;
+}
+
+.centerbox {
+    width: 46%;
+    display: block;
+    margin: 0 auto;
+}
+
+#health {
+    width: 25%;
+    float: right;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+}
+
+#systems {
+    width: 98%; 
+    padding:1%;
+}
+
+/* Formatting for layout boxes */
+.borders {
+    border: 2px solid #CCCCCC;
+    border-radius: 20px;
+}
+
+.comingsoon {
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+/*    font-size: 1.5em; */
+    font-weight: bold;
+    color: white;
+}
+
+/* Formatting for elements */
+
+/* Common elements */
+.buttons {
+    height: 35px;
+/*    width: 48%; */
+    border: 1px solid #333333;
+    text-align: center;
+    display:inline-block;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-size: 1.4em; 
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding-top: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Breach box elements */
+#breach {
+    width: 45%;
+    height: 66px;
+    padding-top: 18px;
+    font-size: 2.4em;
+}
+
+/* Health box elements */
+.healthBox {
+    height: 290px;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.health_container {
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.healthTitleQuarter {
+    height: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.healthTitleTenth {
+    height: 23px;
+    font-weight: bold;
+    color: white;
+}
+
+.healthBar {
+    width: 100px;
+    border: 1px solid #333333;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.healthTenth {
+    height: 20px;
+    padding-top: 0;
+}
+
+.healthSpacer {
+    font-size: 1px;
+    height: 1px;
+    padding-top: 0;
+}
+
+.healthQuarter {
+    height: 35px;
+    padding-top: 15px;
+}
+
+/* Timer box elements */
+.tmrgrp {
+/*    margin-top: 16px; */
+    width: 95%;
+    height: 130px;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-size: 6em; 
+    font-weight: bold;
+    color: white;
+	margin:0px auto;
+    text-align:center; 
+/*    border: 1px solid black; */
+}
+
+.tmrlogo {
+    width: 90%;
+    height: 70px;
+	margin:0px auto;
+    text-align:center; 
+}
+
+#gameoverdisp {
+    font-size: 3.6em;
+    height: 80px;
+    padding-top: 20px;
+}
+
+.drlogobox {
+    width: 80%;
+	margin:0px auto;
+    text-align:center; 
+}
+.drlogo {
+    height: auto;
+    width: 60%;
+    max-height: 100px;
+    max-width: 370px;
+}
+
+.tmrbtn {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+/*    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 30px;
+    border: 1px solid white; */  
+}
+
+.ltbtn {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.rtbtn {
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+#tmrstart {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+#setbtn {
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+#tmrreset {
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+#tmrpause {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+#tmrresume {
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.tmrcounter {
+/*    border: 1px solid #ddd; */
+    width: 95%;
+    height: 25px;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.boxTitle {
+    height: 25px;
+    width: 100%;
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+.setCol {
+    height: 165px;
+    width: 32%;
+    display: inline-block;
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+    font-size: 0.7em;
+}
+
+.credBox {
+    height: 190px;
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+
+.settingItem {
+    height: 25px;
+    width: 100%;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid white;
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+}
+
+select {
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+	-moz-appearance: none; /* Removes Default Firefox style*/
+    background-color: transparent;
+    border: 1px solid white;
+    font-family:"Arial Black", Gadget, sans-serif;
+    color: white;
+}
+
+
+/* Systems box elements */
+.systemsSet {
+    height: 100%;
+/*    width: 100%; */
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.scorebox {
+    font-family:"Arial Black", Gadget, sans-serif;
+    height: 100%;
+    width: 19%;
+    border: 2px solid #333333;
+    border-radius: 20px;
+/*    position:relative; */
+    display: inline-block; 
+/*	display: table; */
+}
+
+.systemAlignOut {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+.systemAlignIn {
+    height: 100%;
+    width: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.systemText {
+    text-align: center;
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: white;
+    height: 25px;
+    width: 100%;
+}
+
+.system_container {
+    width: 100px;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.systemTitleTenth {
+    height: 23px;
+}
+
+.systemBar {
+    width: 100px;
+    border: 1px solid #333333;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.systemTenth {
+    height: 20px;
+    padding-top: 0;
+}
+
+
+.updownbutton {
+    height: 27.5%;
+    width: 100%;
+    background-color: transparent;
+/*    position:absolute; */
+/*    border: 1px solid white; */
+}
+.upbtn {
+    background-image: url('./img/up.png');
+    background-size: 100% 100%;
+}
+.downbtn {
+    background-image: url('./img/down.png');
+    background-size: 100% 100%;
+}
+.statusbox {
+	display: table; 
+	height: 500px;
+    
+}
+
+.statusout {
+/*    border: 1px solid white; */
+    font-family:"Arial Black", Gadget, sans-serif;
+    font-size: 3.5em; 
+    font-weight: bold;
+    color: white;
+    width: 60%;
+    border-radius: 10px;
+    border: 1px solid #333333;
+    text-align:center;
+    display: block;
+    margin: 0 auto;
+/*	display: table-cell; 
+	vertical-align: middle;
+	z-index: 1; */
+}
+
+.sysLifeSup {
+}
+.sysShields {
+}
+.sysHyper {
+}
+.sysTeleport {
+}
+.sysLasers {
+}
+.sysCargoBay {
+}
+.sysEnergy {
+}
+
+
+/* Text color changes */
+.redtext {
+    color: red;
+}
+
+.whiteText {
+    color: white;
+}
+
+.greyText {
+    color: #333333;
+}
+
+
+/* Color button gradients common between boxes */
+.greenbtn, .sysLifeSup.css90, .css80, .css70 {
+    background-color: #032400;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#032400), to(#8BCB3F));
+    background-image: -webkit-linear-gradient(top, #032400, #8BCB3F); 
+    background-image:    -moz-linear-gradient(top, #032400, #8BCB3F);
+    background-image:     -ms-linear-gradient(top, #032400, #8BCB3F);
+    background-image:      -o-linear-gradient(top, #032400, #8BCB3F);
+}
+
+.redbtn, .sysLifeSup.css50, .sysLifeSup.css40, .sysLifeSup.css30, .css20, .css10 {
+    background-color: #240300;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#240300), to(#CB0300));
+    background-image: -webkit-linear-gradient(top, #240300, #CB0300); 
+    background-image:    -moz-linear-gradient(top, #240300, #CC0300);
+    background-image:     -ms-linear-gradient(top, #240300, #CC0300);
+    background-image:      -o-linear-gradient(top, #240300, #CC0300);
+}
+
+.orangebtn, .css40, .css30 {
+    background-color: #4D1300;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#4D1300), to(#E19035));
+    background-image: -webkit-linear-gradient(top, #4D1300, #E19035); 
+    background-image:    -moz-linear-gradient(top, #4D1300, #E19035);
+    background-image:     -ms-linear-gradient(top, #4D1300, #E19035);
+    background-image:      -o-linear-gradient(top, #4D1300, #E19035);
+}
+
+.yellowbtn, .sysLifeSup.css80, .sysLifeSup.css70, .sysLifeSup.css60, .css60, .css50 {
+    background-color: #895505;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#895505), to(#FFEF00));
+    background-image: -webkit-linear-gradient(top, #895505, #FFEF00); 
+    background-image:    -moz-linear-gradient(top, #895505, #FFEF00);
+    background-image:     -ms-linear-gradient(top, #895505, #FFEF00);
+    background-image:      -o-linear-gradient(top, #895505, #FFEF00);
+}
+
+.bluebtn, .sysCargoBay.css60, .sysCargoBay.css70, .sysCargoBay.css80 {
+    background-color: #13235E;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#13235E), to(#24AFD8));
+    background-image: -webkit-linear-gradient(top, #13235E, #24AFD8); 
+    background-image:    -moz-linear-gradient(top, #13235E, #24AFD8);
+    background-image:     -ms-linear-gradient(top, #13235E, #24AFD8);
+    background-image:      -o-linear-gradient(top, #13235E, #24AFD8);
+}
+
+.purplebtn, .sysCargoBay.css0, .sysCargoBay.css10, .sysCargoBay.css20 {
+    background-color: #230032;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#230032), to(#9376A6));
+    background-image: -webkit-linear-gradient(top, #230032, #9376A6); 
+    background-image:    -moz-linear-gradient(top, #230032, #9376A6);
+    background-image:     -ms-linear-gradient(top, #230032, #9376A6);
+    background-image:      -o-linear-gradient(top, #230032, #9376A6);
+}
+
+.blackbtn, .sysLifeSup.css20, .sysLifeSup.css10, .sysLifeSup.css0, .css0 {
+    background-color: #000000;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#000000), to(#262626));
+    background-image: -webkit-linear-gradient(top, #000000, #262626); 
+    background-image:    -moz-linear-gradient(top, #000000, #262626);
+    background-image:     -ms-linear-gradient(top, #000000, #262626);
+    background-image:      -o-linear-gradient(top, #000000, #262626);
+}
+
+.dkgreenbtn, .sysLifeSup.css100, .css100, .css90 {
+    background-color: #001400;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#001400), to(#2B9B0F));
+    background-image: -webkit-linear-gradient(top, #001400, #2B9B0F); 
+    background-image:    -moz-linear-gradient(top, #001400, #2B9B0F);
+    background-image:     -ms-linear-gradient(top, #001400, #2B9B0F);
+    background-image:      -o-linear-gradient(top, #001400, #2B9B0F);
+}
+
+.indigobtn, .sysCargoBay.css50, .sysCargoBay.css40, .sysCargoBay.css30 {
+    background-color: #160026;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#160026), to(#4B0082));
+    background-image: -webkit-linear-gradient(top, #160026, #4B0082); 
+    background-image:    -moz-linear-gradient(top, #160026, #4B0082);
+    background-image:     -ms-linear-gradient(top, #160026, #4B0082);
+    background-image:      -o-linear-gradient(top, #160026, #4B0082);
+}
+
+.seagreenbtn, .sysCargoBay.css100, .sysCargoBay.css90 {
+    background-color: #093331;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#093331), to(#20B2AA));
+    background-image: -webkit-linear-gradient(top, #093331, #20B2AA); 
+    background-image:    -moz-linear-gradient(top, #093331, #20B2AA);
+    background-image:     -ms-linear-gradient(top, #093331, #20B2AA);
+    background-image:      -o-linear-gradient(top, #093331, #20B2AA);
+}
+
+.greybtn {
+    background-color: #262626;
+    background-image: -webkit-gradient(linear, 100% 0%, 0% 0%, from(#262626), to(#797A7C));
+    background-image: -webkit-linear-gradient(top, #262626, #797A7C); 
+    background-image:    -moz-linear-gradient(top, #262626, #797A7C);
+    background-image:     -ms-linear-gradient(top, #262626, #797A7C);
+    background-image:      -o-linear-gradient(top, #262626, #797A7C);
+}
+

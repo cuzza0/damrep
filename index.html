@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+        <link rel='stylesheet' href='style.css' />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="tock.js"></script>
+        <script src="iosdblclick.js"></script>
+        <script type="text/javascript" src='script.js'></script>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- iPhone ICON -->
+        <link rel="apple-touch-icon" href="./img/touch-icon-iphone.png">
+        <!-- iPad ICON-->
+        <link rel="apple-touch-icon" sizes="76x76" href="./img/touch-icon-ipad.png">
+        <!-- iPhone (Retina) ICON-->
+        <link rel="apple-touch-icon" sizes="120x120" href="./img/touch-icon-iphone-retina.png">
+        <!-- iPad (Retina) ICON-->
+        <link rel="apple-touch-icon" sizes="152x152" href="./img/touch-icon-ipad-retina.png">
+
+    	<!-- iPhone standard resolution 320x460  (landscape not needed because all web apps start portrait on iPhone) -->
+    	<link  rel="apple-touch-startup-image" href="splash-320x460.jpg" media="(device-width: 320px)" />
+    	<!-- iPhone 4/4s high resolution (retina) 640x920 pixels (landscape not needed because all web apps start portrait on iPhone) -->
+    	<link rel="apple-touch-startup-image" href="splash-640x920.jpg" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" />
+    	<!-- iPhone 5 high resolution (retina) 640x1096 pixels (landscape not needed because all web apps start portrait on iPhone) -->
+    	<link rel="apple-touch-startup-image" href="splash-640x1096.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+
+    	<!-- iPad Portrait 768x1004 -->
+    	<link rel="apple-touch-startup-image" href="splash-768x1004.jpg" media="(device-width: 768px) and (orientation: portrait)" />
+    	<!-- iPad Landscape 748x1024 (yes, a portrait image but with content rotated 90 degrees - allows 20px for status bar) -->
+    	<link rel="apple-touch-startup-image" href="splash-748x1024.jpg" media="(device-width: 768px) and (orientation: landscape)" />
+    	<!-- iPad retina Portrait 1536x2008 -->
+    	<link rel="apple-touch-startup-image" href="splash-1536x2008.jpg" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" />
+    	<!-- iPad retina Landscape 1496x2048 (yes, a portrait image but with content rotated 90 degrees - allows 40px for status bar) -->
+    	<link rel="apple-touch-startup-image" href="splash-1496x2048.jpg" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" />
+        <title>Damage Report Manager</title>
+    </head>
+    
+    <body>
+        <div id="loaderbox">
+            <div id="loaderMsg">
+                <div class="loadertext loaderWelcome" id="loaderWelcomePad">Welcome to the Damage Report Manager. This is intended for use on an iPad tablet as a companion to the <a href="http://boardgamegeek.com/boardgame/128137/damage-report">Damage Report</a> board game. There is a timer only edition of this available <a href="timer.html">here</a> intended for iPhone screens. This uses sound so please turn your volume UP.</div> 
+                <div class="loadertext loaderWelcome" id="loaderWelcomePhone">Welcome to the Damage Report Manager. Your device has been detected as an iPhone or iPod device which is not suitable for the full Manager. <a href="timer.html">Tap here for the Timer only version</a>. Otherwise, prepare for a teeny tiny manager. This uses sound so please turn your volume UP.</div> 
+                <div class="loadertext loaderPop" id="loaderPopPad">loading...<br /><img src="./img/loading1.gif" /></div>
+                <div class="loadertext loaderPop" id="loaderPopPhone">loading...<br /><img src="./img/loading1.gif" /></div>
+                <div class = "loadertext" id="loaderready">                    
+                    <div class="buttons dkgreenbtn loaderBtn" id="loaderbtnPad">DON'T PANIC</div>
+                    <div class="buttons dkgreenbtn loaderBtn" id="loaderbtnPhone">DON'T PANIC</div>
+                </div>
+            </div>
+        </div>
+        <div class="toprowbox">
+            <div class="toprow borders" id="breachBox">Corridor Status<br/>
+                <div class="buttons greenbtn" id="breach">A3</div>
+                <div class="buttons greenbtn" id="breach">B9</div>
+                <div class="buttons greenbtn" id="breach">C4</div>
+                <div class="buttons greenbtn" id="breach">D8</div>
+                <div class="buttons greenbtn" id="breach">E6</div>
+                <div class="buttons greenbtn" id="breach">F1</div>
+            </div>
+            <div class="toprow borders" id="health">
+                <div class="healthBox">
+                    <div class="health_container" id="hthHull">
+                        <div class="healthTitleQuarter">Ship Hull</div>
+                        <div class="healthBar healthQuarter dkgreenbtn">100%</div>
+                        <div class="healthBar healthQuarter yellowbtn">75%</div>
+                        <div class="healthBar healthQuarter orangebtn">50%</div>
+                        <div class="healthBar healthQuarter redbtn">25%</div>
+                        <div class="healthBar healthQuarter blackbtn">0%</div>
+                    </div>
+                    <div class="health_container" id="hthCrisisQP">
+                        <div class="healthTitleQuarter">Crisis</div>
+                        <div class="healthBar healthQuarter blackbtn">100%</div>
+                        <div class="healthBar healthQuarter blackbtn">75%</div>
+                        <div class="healthBar healthQuarter blackbtn">50%</div>
+                        <div class="healthBar healthQuarter blackbtn">25%</div>
+                        <div class="healthBar healthQuarter blackbtn">0%</div>
+                    </div>
+                    <div class="health_container" id="hthCrisisQN">
+                        <div class="healthTitleQuarter">Crisis</div>
+                        <div class="healthBar healthQuarter blackbtn">5</div>
+                        <div class="healthBar healthQuarter blackbtn">4</div>
+                        <div class="healthBar healthQuarter blackbtn">3</div>
+                        <div class="healthBar healthQuarter blackbtn">2</div>
+                        <div class="healthBar healthQuarter blackbtn">1</div>
+                    </div>
+                    <div class="health_container" id="hthCrisisTP">
+                        <div class="healthTitleTenth">Crisis</div>
+                        <div class="healthBar healthTenth blackbtn">100%</div>
+                        <div class="healthBar healthTenth blackbtn">90%</div>
+                        <div class="healthBar healthTenth blackbtn">80%</div>
+                        <div class="healthBar healthTenth blackbtn">70%</div>
+                        <div class="healthBar healthTenth blackbtn">60%</div>
+                        <div class="healthBar healthTenth blackbtn">50%</div>
+                        <div class="healthBar healthTenth blackbtn">40%</div>
+                        <div class="healthBar healthTenth blackbtn">30%</div>
+                        <div class="healthBar healthTenth blackbtn">20%</div>
+                        <div class="healthBar healthTenth blackbtn">10%</div>
+                        <div class="healthBar healthTenth blackbtn">0%</div>
+                    </div>
+                    <div class="health_container" id="hthCrisisTN">
+                        <div class="healthTitleTenth">Crisis</div>
+                        <div class="healthBar healthTenth blackbtn">10</div>
+                        <div class="healthBar healthTenth blackbtn">9</div>
+                        <div class="healthBar healthTenth blackbtn">8</div>
+                        <div class="healthBar healthTenth blackbtn">7</div>
+                        <div class="healthBar healthTenth blackbtn">6</div>
+                        <div class="healthBar healthTenth blackbtn">5</div>
+                        <div class="healthBar healthTenth blackbtn">4</div>
+                        <div class="healthBar healthTenth blackbtn">3</div>
+                        <div class="healthBar healthTenth blackbtn">2</div>
+                        <div class="healthBar healthTenth blackbtn">1</div>
+                        <div class="healthBar healthTenth blackbtn">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="toprow borders centerbox" id="timer">
+                <div class="tmrlogo" id="drheader"><img class="drlogo" src="./img/drlogo.png"></div>
+                <div class="tmrgrp" id="tmrdisp">0:00.00</div>
+                <div class="tmrgrp redtext" id="gameoverdisp">GAME OVER!</div>
+<!--            <div class="tmrcounter" id="tmrcount">3:00.00</div>  --> 
+                <div class="tmrcounter" id="tmrlap"></div>
+                <div class="tmrbtn">
+                    <div class="buttons greenbtn" id="tmrstart">Start</div>
+                    <div class="buttons redbtn" id="tmrpause">Pause</div>
+                    <div class="buttons greenbtn" id="tmrresume">Resume</div>
+                    <div class="buttons orangebtn" id="tmrreset">Reset</div>
+                    <div class="buttons bluebtn" id="setbtn">Settings</div>
+                </div>
+                <div class="vsepbox"></div>
+                <audio preload="auto" id="redAlert">
+                    <source src="./audio/red_alert.mp3" type="audio/mpeg">
+                    <source src="./audio/red_alert.ogg" type="audio/ogg">
+                </audio>
+                <audio preload="auto" id="gameOver">
+                    <source src="./audio/bomb-06.mp3" type="audio/mpeg">
+                    <source src="./audio/bomb-06.ogg" type="audio/ogg">
+                </audio>
+            </div>
+            <div class="toprow borders centerbox" id="settings"><div class="boxTitle">Settings</div>
+                <div class="credBox" id="settingsBox">
+                    <div class="setCol" id="settimer">
+                        <h3>Timer</h3>
+                        <div class="settingItem"><form>Interval: <input type="text" name="setTime" size="4" placeholder="3:00" value="3:00" pattern="([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]" title="Must be time in M:SS" id="tmrInterSet"></form></div>
+                        <div class="settingItem"><form>Damage Reports: <input type="text" name="setDRCard" size="2" placeholder="15" value="15" pattern="([0-9][0-9]|[0-9])" title="Must be a number" id="tmrDRDeck"></form></div>
+                        <div class="settingItem">(includes Game Over)</div>
+                        <div class="settingItem"><form>Event Cards: <input type="text" name="setEvCard" size="2" placeholder="0" value="0" pattern="([0-9][0-9]|[0-9])" title="Must be a number" id="tmrDREvent"></form></div>
+                        <div class="settingItem">Total Game Time: <span id="setTotTime"></span></div>
+                        <div class="settingItem">Apply DR? <input type="checkbox" name="shipsystem" value="ssPC"></div>
+                        <div class="settingItem">&nbsp;</div>
+                    </div>
+                    <div class="setCol" id="setsys">
+                        <h3>Ship Systems</h3>
+                        <div class="settingItem"><input type="checkbox" class="checkEnabled" id="pcEnabled" value="ssPC" checked>Plasma Capacitor</div>
+                        <div class="settingItem"><input type="checkbox" class="checkEnabled" id="fgEnabled" value="ssFG" checked>Flux Generator</div>
+                        <div class="settingItem"><input type="checkbox" class="checkEnabled" id="peEnabled" value="ssPE" checked>Photonic Emitter</div>
+                        <div class="settingItem"><input type="checkbox" class="checkEnabled" id="trEnabled" value="ssTR" checked>Torque Relay</div>
+                        <div class="settingItem"><input type="checkbox" class="checkEnabled" id="smEnabled" value="ssSM" checked>Sonic Modulator </div>
+                        <div class="settingItem">Crisis Tracker:</div>
+                        <div class="settingItem">&nbsp;</div>
+                    </div>
+                <div class="setCol" id="setmod">
+                    <h3>Installed in - Critical? </h3>
+                        <div class="settingItem">
+                            <select class="dropSystem" id="pcModule">
+                                <option value="sysNull"></option>
+                                <option value="sysLifeSup">Life Support</option>
+                                <option value="sysShields">Shields</option>
+                                <option value="sysHyper">Hyperdrive</option>
+                                <option value="sysTeleport">Teleport</option>
+                                <option value="sysLasers">Lasers</option>
+                                <option value="sysCargoBay">Cargo Bay</option>
+                                <option value="sysEnergy">Energy Core</option>
+                            </select><input type="checkbox" class="checkCritical" id="pcCritical" value="ssPCCrit">
+                        </div>
+                        <div class="settingItem">
+                            <select class="dropSystem" id="fgModule">
+                                <option value="sysNull"></option>
+                                <option value="sysLifeSup">Life Support</option>
+                                <option value="sysShields">Shields</option>
+                                <option value="sysHyper">Hyperdrive</option>
+                                <option value="sysTeleport">Teleport</option>
+                                <option value="sysLasers">Lasers</option>
+                                <option value="sysCargoBay">Cargo Bay</option>
+                                <option value="sysEnergy">Energy Core</option>
+                            </select><input type="checkbox" class="checkCritical" id="fgCritical" value="ssFGCrit">
+                        </div>
+                        <div class="settingItem">
+                            <select class="dropSystem" id="peModule">
+                                <option value="sysNull"></option>
+                                <option value="sysLifeSup">Life Support</option>
+                                <option value="sysShields">Shields</option>
+                                <option value="sysHyper">Hyperdrive</option>
+                                <option value="sysTeleport">Teleport</option>
+                                <option value="sysLasers">Lasers</option>
+                                <option value="sysCargoBay">Cargo Bay</option>
+                                <option value="sysEnergy">Energy Core</option>
+                            </select><input type="checkbox" class="checkCritical" id="peCritical" value="ssPECrit">
+                        </div>
+                        <div class="settingItem">
+                            <select class="dropSystem" id="trModule">
+                                <option value="sysNull"></option>
+                                <option value="sysLifeSup">Life Support</option>
+                                <option value="sysShields">Shields</option>
+                                <option value="sysHyper">Hyperdrive</option>
+                                <option value="sysTeleport">Teleport</option>
+                                <option value="sysLasers">Lasers</option>
+                                <option value="sysCargoBay">Cargo Bay</option>
+                                <option value="sysEnergy">Energy Core</option>
+                            </select><input type="checkbox" class="checkCritical" id="trCritical" value="ssTRCrit">
+                        </div>
+                        <div class="settingItem">
+                            <select class="dropSystem" id="smModule">
+                                <option value="sysNull"></option>
+                                <option value="sysLifeSup">Life Support</option>
+                                <option value="sysShields">Shields</option>
+                                <option value="sysHyper">Hyperdrive</option>
+                                <option value="sysTeleport">Teleport</option>
+                                <option value="sysLasers">Lasers</option>
+                                <option value="sysCargoBay">Cargo Bay</option>
+                                <option value="sysEnergy">Energy Core</option>
+                            </select><input type="checkbox" class="checkCritical" id="smCritical" value="ssSMCrit">
+                        </div>
+                        <div class="settingItem">
+                            <select id="hthCrisisSel">
+                                <option value="hthCrisisDis" selected>Disabled</option>
+                                <option value="hthCrisisTP">Percentage - 10%</option>
+                                <option value="hthCrisisQP">Percentage - 25%</option>
+                                <option value="hthCrisisTN">Counter - 1-10</option>
+                                <option value="hthCrisisQN">Counter - 1-5</option>
+                            </select>
+                        </div>
+                        <div class="settingItem">&nbsp;</div>
+                </div>
+            </div>
+                <div class="tmrbtn">
+                    <div class="buttons greybtn ltbtn" id="credbtn">Credits</div>
+                    <div class="buttons redbtn rtbtn" id="mainbtn">Close</div>
+                </div>
+            </div>
+            <div class="toprow borders centerbox" id="credits"><div class="boxTitle">Credits</div>
+            <div class="credBox" id="creditText">
+                <p>Created by Ben "Cuzza" Curran for use with <a href="http://boardgamegeek.com/boardgame/128137/damage-report">Damage Report</a> by <a href="http://www.bfrgames.com/">Break From Reality Games</a>.</p>
+                <p>Thanks to <a href="https://twitter.com/cwoodley">Cale Woodley</a> for answering my dumbassed questions about web design.</p>
+                <p>Thanks to <a href="http://www.codecademy.com/learn">Codeacademy</a> for teaching me HTML5, CSS, JavaScript and JQuery in 2 weeks to make this.</p>
+                <p>Timer powered by <a href="https://github.com/mrchimp/tock">Tock.js</a> by MrChimp.</p>
+                <p>Development space provided by <a href="https://koding.com/">Koding</a>.</p>
+                <p><span id="showDebug">Red Alert</span> sound effect by <a href="http://www.medievalfuture.com/precursors/main.php">The Precursors</a>.</p>
+                </div>
+                <div class="tmrbtn">
+                    <div class="buttons bluebtn ltbtn" id="crsetbtn">Settings</div>
+                    <div class="buttons redbtn rtbtn" id="crmainbtn">Close</div>
+                </div>
+            </div>
+        </div>
+        <div class="vsepbox"></div>
+        <div class="botrowbox">
+            <div class="bottomrow borders" id="systems">
+                <div class="systemsSet">
+                    <div class="scorebox greenbtn" id="pcDisplay">
+                        <div class="systemAlignOut">
+                            <div class="systemAlignIn">
+                                <div class="systemText">Plasma Capacitor</div>
+                                <div class="updownbutton upbtn" id="pcUp"></div>
+                                <div class="statusout" id="pcOut">50</div>
+                                <div class="updownbutton downbtn" id="pcDn"></div>
+                                <div class="systemText" id="pcSystem"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scorebox orangebtn" id="fgDisplay">
+                        <div class="systemAlignOut">
+                            <div class="systemAlignIn">
+                                <div class="systemText">Flux Generator</div>
+                                <div class="updownbutton upbtn" id="fgUp"></div>
+                                <div class="statusout" id="fgOut">50</div>
+                                <div class="updownbutton downbtn" id="fgDn"></div>
+                                <div class="systemText" id="fgSystem"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scorebox purplebtn" id="peDisplay">
+                        <div class="systemAlignOut">
+                            <div class="systemAlignIn">
+                                <div class="systemText">Photonic Emitter</div>
+                                <div class="updownbutton upbtn" id="peUp"></div>
+                                <div class="statusout" id="peOut">50</div>
+                                <div class="updownbutton downbtn" id="peDn"></div>
+                                <div class="systemText" id="peSystem"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scorebox greybtn" id="trDisplay">
+                        <div class="systemAlignOut">
+                            <div class="systemAlignIn">
+                                <div class="systemText">Torque Relay</div>
+                                <div class="updownbutton upbtn" id="trUp"></div>
+                                <div class="statusout" id="trOut">50</div>
+                                <div class="updownbutton downbtn" id="trDn"></div>
+                                <div class="systemText" id="trSystem"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scorebox bluebtn" id="smDisplay">
+                        <div class="systemAlignOut">
+                            <div class="systemAlignIn">
+                                <div class="systemText">Sonic Modulator</div>
+                                <div class="updownbutton upbtn" id="smUp"></div>
+                                <div class="statusout" id="smOut">50</div>
+                                <div class="updownbutton downbtn" id="smDn"></div>
+                                <div class="systemText" id="smSystem"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="botrowbox" id="debugBox">
+            <div class="bottomrow borders whiteText" id="debugText">
+                Debug:<br/>
+            </div>
+        </div>
+    </body>
+
+</html>
+
