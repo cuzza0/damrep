@@ -20,32 +20,38 @@
         <link rel="apple-touch-icon" sizes="152x152" href="./img/touch-icon-ipad-retina.png">
 
     	<!-- iPhone standard resolution 320x460  (landscape not needed because all web apps start portrait on iPhone) -->
-    	<link  rel="apple-touch-startup-image" href="splash-320x460.jpg" media="(device-width: 320px)" />
+    	<link  rel="apple-touch-startup-image" href="./img/splash-320x460.jpg" media="(device-width: 320px)" />
     	<!-- iPhone 4/4s high resolution (retina) 640x920 pixels (landscape not needed because all web apps start portrait on iPhone) -->
-    	<link rel="apple-touch-startup-image" href="splash-640x920.jpg" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" />
+    	<link rel="apple-touch-startup-image" href="./img/splash-640x920.jpg" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" />
     	<!-- iPhone 5 high resolution (retina) 640x1096 pixels (landscape not needed because all web apps start portrait on iPhone) -->
-    	<link rel="apple-touch-startup-image" href="splash-640x1096.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+    	<link rel="apple-touch-startup-image" href="./img/splash-640x1096.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
 
     	<!-- iPad Portrait 768x1004 -->
-    	<link rel="apple-touch-startup-image" href="splash-768x1004.jpg" media="(device-width: 768px) and (orientation: portrait)" />
+    	<link rel="apple-touch-startup-image" href="./img/splash-768x1004.jpg" media="(device-width: 768px) and (orientation: portrait)" />
     	<!-- iPad Landscape 748x1024 (yes, a portrait image but with content rotated 90 degrees - allows 20px for status bar) -->
-    	<link rel="apple-touch-startup-image" href="splash-748x1024.jpg" media="(device-width: 768px) and (orientation: landscape)" />
+    	<link rel="apple-touch-startup-image" href="./img/splash-748x1024.jpg" media="(device-width: 768px) and (orientation: landscape)" />
     	<!-- iPad retina Portrait 1536x2008 -->
-    	<link rel="apple-touch-startup-image" href="splash-1536x2008.jpg" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" />
+    	<link rel="apple-touch-startup-image" href="./img/splash-1536x2008.jpg" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" />
     	<!-- iPad retina Landscape 1496x2048 (yes, a portrait image but with content rotated 90 degrees - allows 40px for status bar) -->
-    	<link rel="apple-touch-startup-image" href="splash-1496x2048.jpg" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" />
+    	<link rel="apple-touch-startup-image" href="./img/splash-1496x2048.jpg" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" />
         <title>Damage Report Manager</title>
     </head>
     
     <body>
-        <div id="loaderbox">
+        <div class="loaderBox" id="loaderboxPad">
             <div id="loaderMsg">
                 <div class="loadertext loaderWelcome" id="loaderWelcomePad">Welcome to the Damage Report Manager. This is intended for use on an iPad tablet as a companion to the <a href="http://boardgamegeek.com/boardgame/128137/damage-report">Damage Report</a> board game. There is a timer only edition of this available <a href="timer.html">here</a> intended for iPhone screens. This uses sound so please turn your volume UP.</div> 
-                <div class="loadertext loaderWelcome" id="loaderWelcomePhone">Welcome to the Damage Report Manager. Your device has been detected as an iPhone or iPod device which is not suitable for the full Manager. <a href="timer.html">Tap here for the Timer only version</a>. Otherwise, prepare for a teeny tiny manager. This uses sound so please turn your volume UP.</div> 
                 <div class="loadertext loaderPop" id="loaderPopPad">loading...<br /><img src="./img/loading1.gif" /></div>
-                <div class="loadertext loaderPop" id="loaderPopPhone">loading...<br /><img src="./img/loading1.gif" /></div>
                 <div class = "loadertext" id="loaderready">                    
                     <div class="buttons dkgreenbtn loaderBtn" id="loaderbtnPad">DON'T PANIC</div>
+                </div>
+            </div>
+        </div>
+        <div class="loaderBox" id="loaderboxPhone">
+            <div id="loaderMsg">
+                <div class="loadertext loaderWelcome" id="loaderWelcomePhone">Welcome to the Damage Report Manager. Your device has been detected as an iPhone or iPod device which is not suitable for the full Manager. <a href="timer.html">Tap here for the Timer only version</a>. Otherwise, prepare for a teeny tiny manager. This uses sound so please turn your volume UP.</div> 
+                <div class="loadertext loaderPop" id="loaderPopPhone">loading...<br /><img src="./img/loading1.gif" /></div>
+                <div class = "loadertext" id="loaderready">                    
                     <div class="buttons dkgreenbtn loaderBtn" id="loaderbtnPhone">DON'T PANIC</div>
                 </div>
             </div>

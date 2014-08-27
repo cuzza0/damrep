@@ -10,16 +10,10 @@ $(document).ready(function(){
         );
     }
 //        $('#tmrlap').html(navigator.platform);
-        $('#loaderWelcomePhone').hide();
-        $('#loaderPopPhone').hide();
-        $('#loaderbtnPhone').hide();
+        $('#loaderboxPhone').hide();
     if(isiPhone()){
-        $('#loaderWelcomePad').hide();
-        $('#loaderWelcomePhone').show();
-        $('#loaderPopPad').hide();
-        $('#loaderPopPhone').show();
-        $('#loaderbtnPad').hide();
-        $('#loaderbtnPhone').show();
+        $('#loaderboxPad').hide();
+        $('#loaderboxPhone').show();
     }
 //    $('#tmrlap').html(bwidth + ' ' + bheight);    
     bwidth -= 50;
@@ -30,7 +24,7 @@ $(document).ready(function(){
     $('.loaderBtn').click(function(){
         var gameOver = document.getElementsByTagName("audio")[1];
         gameOver.play();
-        $('#loaderbox').fadeOut(1000);
+        $('.loaderBox').fadeOut(1000);
     });
 
     // No double tap zooming on buttons when double tapped
