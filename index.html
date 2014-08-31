@@ -58,22 +58,22 @@
         </div>
         <div class="toprowbox">
             <div class="toprow borders" id="breachBox">Corridor Status<br/>
-                <div class="buttons greenbtn" id="breach">A3</div>
-                <div class="buttons greenbtn" id="breach">B9</div>
-                <div class="buttons greenbtn" id="breach">C4</div>
-                <div class="buttons greenbtn" id="breach">D8</div>
-                <div class="buttons greenbtn" id="breach">E6</div>
-                <div class="buttons greenbtn" id="breach">F1</div>
+                <div class="buttons breachbtn greenbtn" id="breacha3">A3</div>
+                <div class="buttons breachbtn greenbtn" id="breachb9">B9</div>
+                <div class="buttons breachbtn greenbtn" id="breachc4">C4</div>
+                <div class="buttons breachbtn greenbtn" id="breachd8">D8</div>
+                <div class="buttons breachbtn greenbtn" id="breache6">E6</div>
+                <div class="buttons breachbtn greenbtn" id="breachf1">F1</div>
             </div>
             <div class="toprow borders" id="health">
                 <div class="healthBox">
                     <div class="health_container" id="hthHull">
                         <div class="healthTitleQuarter">Ship Hull</div>
-                        <div class="healthBar healthQuarter dkgreenbtn">100%</div>
-                        <div class="healthBar healthQuarter yellowbtn">75%</div>
-                        <div class="healthBar healthQuarter orangebtn">50%</div>
-                        <div class="healthBar healthQuarter redbtn">25%</div>
-                        <div class="healthBar healthQuarter blackbtn">0%</div>
+                        <div class="healthBar hullBar healthQuarter dkgreenbtn">100%</div>
+                        <div class="healthBar hullBar healthQuarter yellowbtn">75%</div>
+                        <div class="healthBar hullBar healthQuarter orangebtn">50%</div>
+                        <div class="healthBar hullBar healthQuarter redbtn">25%</div>
+                        <div class="healthBar hullBar healthQuarter blackbtn">0%</div>
                     </div>
                     <div class="health_container" id="hthCrisisQP">
                         <div class="healthTitleQuarter">Crisis</div>
@@ -153,7 +153,7 @@
                         <div class="settingItem">(includes Game Over)</div>
                         <div class="settingItem"><form>Event Cards: <input type="text" name="setEvCard" size="2" placeholder="0" value="0" pattern="([0-9][0-9]|[0-9])" title="Must be a number" id="tmrDREvent"></form></div>
                         <div class="settingItem">Total Game Time: <span id="setTotTime"></span></div>
-                        <div class="settingItem">Apply DR? <input type="checkbox" name="shipsystem" value="ssPC"></div>
+                        <div class="settingItem">Automatic DR? <input type="checkbox" id="autoDRApply" value="ssPC"></div>
                         <div class="settingItem">&nbsp;</div>
                     </div>
                     <div class="setCol" id="setsys">
@@ -325,6 +325,7 @@
         <div class="botrowbox" id="debugBox">
             <div class="bottomrow borders whiteText" id="debugText">
                 Debug:<br/>
+                <div id="pickNew">Draw a card</div>
             </div>
         </div>
     </body>

@@ -213,7 +213,7 @@ a {
 }
 
 /* Breach box elements */
-#breach {
+.breachbtn {
     width: 45%;
     height: 66px;
     padding-top: 18px;
