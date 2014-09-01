@@ -120,9 +120,9 @@ $(document).ready(function(){
     $('.checkCritical').change(function() {
        var selBox = $(this).attr('id').substring(0,2);
        if ($('#' + selBox + 'Critical').prop('checked')) {
-           $('#' + selBox + 'Out').addClass('redtext');
+           $('#' + selBox + 'System').addClass('redtext');
        } else {
-           $('#' + selBox + 'Out').removeClass('redtext');
+           $('#' + selBox + 'System').removeClass('redtext');
        }
     });
 
@@ -321,82 +321,112 @@ var drawCard = function() {
     $('#debugText').append('Shields ' + statShields + '<br />');
     $('#debugText').append('Drew card ' + cardName + ' - ' + hullNow + '<br />');
         if (statShields < cardShields) {
-            $('#pcOut').removeClass('css' + $('#pcOut').html());
-            $('#pcOut').html(($('#pcOut').html() - cardDR[rando].pcnos));
-            if ($('#pcOut').html() > 0) {
-                $('#pcOut').addClass('css' + $('#pcOut').html());
-            } else {
-                $('#pcOut').addClass('css0');
+            if (cardDR[rando].pcnos > 0) {
+                $('#pcOut').addClass('redtext');
+                $('#pcOut').removeClass('css' + $('#pcOut').html());
+                $('#pcOut').html(($('#pcOut').html() - cardDR[rando].pcnos));
+                if ($('#pcOut').html() > 0) {
+                    $('#pcOut').addClass('css' + $('#pcOut').html());
+                } else {
+                    $('#pcOut').addClass('css0');
+                }
             }
-            $('#fgOut').removeClass('css' + $('#fgOut').html());
-            $('#fgOut').html(($('#fgOut').html() - cardDR[rando].fgnos));
-            if ($('#fgOut').html() > 0) {
-                $('#fgOut').addClass('css' + $('#fgOut').html());
-            } else {
-                $('#fgOut').addClass('css0');
+            if (cardDR[rando].fgnos > 0) {
+                $('#fgOut').addClass('redtext');
+                $('#fgOut').removeClass('css' + $('#fgOut').html());
+                $('#fgOut').html(($('#fgOut').html() - cardDR[rando].fgnos));
+                if ($('#fgOut').html() > 0) {
+                    $('#fgOut').addClass('css' + $('#fgOut').html());
+                } else {
+                    $('#fgOut').addClass('css0');
+                }
             }
-            $('#peOut').removeClass('css' + $('#peOut').html());
-            $('#peOut').html(($('#peOut').html() - cardDR[rando].penos));
-            if ($('#peOut').html() > 0) {
-                $('#peOut').addClass('css' + $('#peOut').html());
-            } else {
-                $('#peOut').addClass('css0');
+            if (cardDR[rando].penos > 0) {
+                $('#peOut').addClass('redtext');
+                $('#peOut').removeClass('css' + $('#peOut').html());
+                $('#peOut').html(($('#peOut').html() - cardDR[rando].penos));
+                if ($('#peOut').html() > 0) {
+                    $('#peOut').addClass('css' + $('#peOut').html());
+                } else {
+                    $('#peOut').addClass('css0');
+                }
             }
-            $('#trOut').removeClass('css' + $('#trOut').html());
-            $('#trOut').html(($('#trOut').html() - cardDR[rando].trnos));
-            if ($('#trOut').html() > 0) {
-                $('#trOut').addClass('css' + $('#trOut').html());
-            } else {
-                $('#trOut').addClass('css0');
+            if (cardDR[rando].trnos > 0) {
+                $('#trOut').addClass('redtext');
+                $('#trOut').removeClass('css' + $('#trOut').html());
+                $('#trOut').html(($('#trOut').html() - cardDR[rando].trnos));
+                if ($('#trOut').html() > 0) {
+                    $('#trOut').addClass('css' + $('#trOut').html());
+                } else {
+                    $('#trOut').addClass('css0');
+                }
             }
-            $('#smOut').removeClass('css' + $('#smOut').html());
-            $('#smOut').html(($('#smOut').html() - cardDR[rando].smnos));
-            if ($('#smOut').html() > 0) {
-                $('#smOut').addClass('css' + $('#smOut').html());
-            } else {
-                $('#smOut').addClass('css0');
+            if (cardDR[rando].smnos > 0) {
+                $('#smOut').addClass('redtext');
+                $('#smOut').removeClass('css' + $('#smOut').html());
+                $('#smOut').html(($('#smOut').html() - cardDR[rando].smnos));
+                if ($('#smOut').html() > 0) {
+                    $('#smOut').addClass('css' + $('#smOut').html());
+                } else {
+                    $('#smOut').addClass('css0');
+                }
             }
             if (cardDR[rando].breachnos !== 'na') {
-                $('#breach' + cardDR[rando].breachnos).addClass('redbtn');
+                $('#breach' + cardDR[rando].breachnos).addClass('redbtn').addClass('redtext');
             }
         } else {
-            $('#pcOut').removeClass('css' + $('#pcOut').html());
-            $('#pcOut').html(($('#pcOut').html() - cardDR[rando].pcsld));
-            if ($('#pcOut').html() > 0) {
-                $('#pcOut').addClass('css' + $('#pcOut').html());
-            } else {
-                $('#pcOut').addClass('css0');
+            if (cardDR[rando].pcsld > 0) {
+                $('#pcOut').addClass('redtext');
+                $('#pcOut').removeClass('css' + $('#pcOut').html());
+                $('#pcOut').html(($('#pcOut').html() - cardDR[rando].pcsld));
+                if ($('#pcOut').html() > 0) {
+                    $('#pcOut').addClass('css' + $('#pcOut').html());
+                } else {
+                    $('#pcOut').addClass('css0');
+                }
             }
-            $('#fgOut').removeClass('css' + $('#fgOut').html());
-            $('#fgOut').html(($('#fgOut').html() - cardDR[rando].fgsld));
-            if ($('#fgOut').html() > 0) {
-                $('#fgOut').addClass('css' + $('#fgOut').html());
-            } else {
-                $('#fgOut').addClass('css0');
+            if (cardDR[rando].fgsld > 0) {
+                $('#fgOut').addClass('redtext');
+                $('#fgOut').removeClass('css' + $('#fgOut').html());
+                $('#fgOut').html(($('#fgOut').html() - cardDR[rando].fgsld));
+                if ($('#fgOut').html() > 0) {
+                    $('#fgOut').addClass('css' + $('#fgOut').html());
+                } else {
+                    $('#fgOut').addClass('css0');
+                }
             }
-            $('#peOut').removeClass('css' + $('#peOut').html());
-            $('#peOut').html(($('#peOut').html() - cardDR[rando].pesld));
-            if ($('#peOut').html() > 0) {
-                $('#peOut').addClass('css' + $('#peOut').html());
-            } else {
-                $('#peOut').addClass('css0');
+            if (cardDR[rando].pesld > 0) {
+                $('#peOut').addClass('redtext');
+                $('#peOut').removeClass('css' + $('#peOut').html());
+                $('#peOut').html(($('#peOut').html() - cardDR[rando].pesld));
+                if ($('#peOut').html() > 0) {
+                    $('#peOut').addClass('css' + $('#peOut').html());
+                } else {
+                    $('#peOut').addClass('css0');
+                }
             }
-            $('#trOut').removeClass('css' + $('#trOut').html());
-            $('#trOut').html(($('#trOut').html() - cardDR[rando].trsld));
-            if ($('#trOut').html() > 0) {
-                $('#trOut').addClass('css' + $('#trOut').html());
-            } else {
-                $('#trOut').addClass('css0');
+            if (cardDR[rando].trsld > 0) {
+                $('#trOut').addClass('redtext');
+                $('#trOut').removeClass('css' + $('#trOut').html());
+                $('#trOut').html(($('#trOut').html() - cardDR[rando].trsld));
+                if ($('#trOut').html() > 0) {
+                    $('#trOut').addClass('css' + $('#trOut').html());
+                } else {
+                    $('#trOut').addClass('css0');
+                }
             }
-            $('#smOut').removeClass('css' + $('#smOut').html());
-            $('#smOut').html(($('#smOut').html() - cardDR[rando].smsld));
-            if ($('#smOut').html() > 0) {
-                $('#smOut').addClass('css' + $('#smOut').html());
-            } else {
-                $('#smOut').addClass('css0');
+            if (cardDR[rando].smsld > 0) {
+                $('#smOut').addClass('redtext');
+                $('#smOut').removeClass('css' + $('#smOut').html());
+                $('#smOut').html(($('#smOut').html() - cardDR[rando].smsld));
+                if ($('#smOut').html() > 0) {
+                    $('#smOut').addClass('css' + $('#smOut').html());
+                } else {
+                    $('#smOut').addClass('css0');
+                }
             }
             if (cardDR[rando].breachsld !== 'na') {
-                $('#breach' + cardDR[rando].breachsld).addClass('redbtn');
+                $('#breach' + cardDR[rando].breachsld).addClass('redbtn').addClass('redtext');
             }
         }
 
@@ -408,7 +438,7 @@ var drawCard = function() {
         }
 //        $('#hullOut').html(hullNow);
         hullTarget = hullNow + 1;
-        $('div.health_container .healthBar.hullBar:nth-child(' + hullTarget + ')').addClass('whiteText');
+        $('div.health_container .healthBar.hullBar:nth-child(' + hullTarget + ')').addClass('redtext').addClass('whiteText');
         $('div.health_container .healthBar.hullBar:nth-child(' + hullNow + ')').addClass('greybtn').addClass('greyText').removeClass('whiteText');
     }
 
@@ -431,6 +461,12 @@ var drawCard = function() {
     if ($('#hullOut').html() > 5) {
         $('#hullOut').html('5');
     }
+
+
+// Remove redtext from all changed values
+    setTimeout(function() {
+        $('.statusout, .breachbtn, div.health_container .healthBar.hullBar').removeClass('redtext');
+    }, 1000);
 
 //    Game over if system is critical or hull hits 0    
 /*    if ($('#pcOut').hasClass('sysCritical') && $('#pcOut').html() <= 0) {
